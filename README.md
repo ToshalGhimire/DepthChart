@@ -1,22 +1,23 @@
-# Fortnite-EMT
+# NFL Depth Chart : for fantasy players
 
 Creator: Toshal Ghimire
 
-Title: Fortnite Event and Map Tracker (Fortnite EMT)
+Title: Depth Chart
 
-Description: An android app that updates its user on in game events and the map changes on the world's most popular video game, Fortnite Battle Royal. With each new season of fortnite, the game has new events and updates its map, this app will allow users to easily access this information. 
+Description: An android app that scrapes the web in order to retrieve up to date depth chart from NFL teams.  Intended to be used by fans who also play fantasy football. It will display only the positions that are used in fantasy football and also the teams defensive stats. 
 
 Actors: Fortnite players 
 
+Actors: Fantasy Football Players
+
 Functionality:
-  User is prompted with two options
-    Latest Events
-    Map updates
+  User opens the app
+  
+  User sees a list view of all NFL teams
+      Can Search for a specific team
+      Browse and select a team
+      
+  Once team is selected users:
+      Lists all positions and the starters related with  a non-ppr fantasy football league
+      User will also see defensive stats
 
-Latest Event
-    User sees a list of the latest event which will be constantly updated
-    Can scroll through each list title, and taping it revelies more details
-
-Map Updates
-    Shows most recent Battle Royal map
-    User can scroll down to find older version of the map 
