@@ -12,11 +12,9 @@ Actors: Fantasy Football Players
 
 Functionality:
   
-  1) User sees a list view of all NFL teams
-      *Can Search for a specific team
-      *Browse and select a team
-      
-  2) Once team is selected users:
-      *Lists all positions and the starters related with  a non-ppr fantasy football league
-      *User will also see defensive stats
-
+1. User sees a list view of all NFL teams
+   * Can Search for a specific team
+   * Browse and select a team  
+2. Once team is selected users:
+   * Lists all positions and the starters related with  a non-ppr fantasy football league
+   * User will also see defensive stats 
