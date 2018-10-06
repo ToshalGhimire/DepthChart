@@ -1,0 +1,291 @@
+[ {
+    "id": 0,
+    "code": "ARI",
+    "fullName": "Arizona Cardinals",
+    "city": "Arizona",
+    "teamName": "Cardinals",
+    "website":"https://www.azcardinals.com/",
+    "color": "#97233F"
+
+  },
+  {
+    "id": 1,
+    "code": "ATL",
+    "fullName": "Atlanta Falcons",
+    "city": "Atlanta",
+    "teamName": "Falcons",
+    "website":"https://www.atlantafalcons.com/",
+    "color": "#A71930"
+
+  },
+  {
+    "id": 2,
+    "code": "BAL",
+    "fullName": "Baltimore Ravens",
+    "city": "Baltimore",
+    "teamName": "Ravens",
+    "website":"https://www.baltimoreravens.com/",
+    "color": "#241773"
+  },
+  {
+    "id": 3,
+    "code": "BUF",
+    "fullName": "Buffalo Bills",
+    "city": "Buffalo",
+    "teamName": "Bills",
+    "website":"https://www.buffalobills.com/",
+    "color": "#00338D"
+  },
+  {
+    "id": 4,
+    "code": "CAR",
+    "fullName": "Carolina Panthers",
+    "city": "Carolina",
+    "teamName": "Panthers",
+    "website":"https://www.panthers.com/",
+    "color": "#0085CA"
+  },
+  {
+    "id": 5,
+    "code": "CHI",
+    "fullName": "Chicago Bears",
+    "city": "Chicago",
+    "teamName": "Bears",
+    "website":"https://www.chicagobears.com/",
+    "color": "#0B162A"
+  },
+  {
+    "id": 6,
+    "code": "CIN",
+    "fullName": "Cincinnati Bengals",
+    "city": "Cincinnati",
+    "teamName": "Bengals",
+    "website":"https://www.bengals.com/",
+    "color": "#FB4F14"
+  },
+  {
+    "id": 7,
+    "code": "CLE",
+    "fullName": "Cleveland Browns",
+    "city": "Cleveland",
+    "teamName": "Browns",
+    "website":"https://www.clevelandbrowns.com/",
+    "color": "#311D00"
+  },
+  {
+    "id": 8,
+    "code": "DAL",
+    "fullName": "Dallas Cowboys",
+    "city": "Dallas",
+    "teamName": "Cowboys",
+    "website":"https://www.dallascowboys.com/",
+    "color": "#003594"
+  },
+  {
+    "id": 9,
+    "code": "DEN",
+    "fullName": "Denver Broncos",
+    "city":"Denver",
+    "teamName": "Broncos",
+    "website":"https://www.denverbroncos.com/",
+    "color": "#FB4F14"
+  },
+  {
+    "id": 10,
+    "code": "DET",
+    "fullName": "Detroit Lions",
+    "city": "Detroit",
+    "teamName": "Lions",
+    "website":"https://www.detroitlions.com/",
+    "color": "#0076B6"
+  },
+  {
+    "id": 11,
+    "code": "GB",
+    "fullName": "Green Bay Packers",
+    "city": "Green Bay",
+    "teamName": "Packers",
+    "website":"https://www.packers.com/",
+    "color": "#203731"
+  },
+  {
+    "id": 12,
+    "code": "HOU",
+    "fullName": "Houston Texans",
+    "city": "Houston",
+    "teamName": "Texans",
+    "website":"https://www.houstontexans.com/",
+    "color": "#03202F"
+  },
+  {
+    "id": 13,
+    "code": "IND",
+    "fullName": "Indianapolis Colts",
+    "city": "Indianapolis",
+    "teamName": "Colts",
+    "website":"https://www.colts.com/",
+    "color": "#002C5F"
+  },
+  {
+    "id": 14,
+    "code": "JAC",
+    "fullName": "Jacksonville Jaguars",
+    "city": "Jacksonville",
+    "teamName": "Jaguars",
+    "website":"https://www.jaguars.com/",
+    "color": "#D7A22A"
+  },
+  {
+    "id": 15,
+    "code": "KC",
+    "fullName": "Kansas City Chiefs",
+    "city": "Kansas City",
+    "teamName": "Chiefs",
+    "website":"https://www.chiefs.com/",
+    "color": "#E31837"
+  },
+  {
+    "id": 16,
+    "code": "LAC",
+    "fullName": "Los Angeles Chargers",
+    "city": "Los Angeles",
+    "teamName": "Chargers",
+    "website":"https://www.chargers.com/",
+    "color": "#FFC20E"
+  },
+  {
+    "id": 17,
+    "code": "LAR",
+    "fullName": "Los Angeles Rams",
+    "city": "Los Angeles",
+    "teamName": "Rams",
+    "website":"https://www.therams.com/",
+    "color": "#002244"
+  },
+  {
+    "id": 18,
+    "code": "MIA",
+    "fullName": "Miami Dolphins",
+    "city": "Miami",
+    "teamName": "Dolphins",
+    "website":"https://www.miamidolphins.com/",
+    "color": "#008E97"
+  },
+  {
+    "id": 19,
+    "code": "MIN",
+    "fullName": "Minnesota Vikings",
+    "city": "Minnesota",
+    "teamName": "Vikings",
+    "website":"https://www.vikings.com/",
+    "color": "#4F2683"
+  },
+  {
+    "id": 20,
+    "code": "NE",
+    "fullName": "New England Patriots",
+    "city": "New England",
+    "teamName": "Patriots",
+    "website":"https://www.patriots.com/",
+    "color": "#002244"
+  },
+  {
+    "id": 21,
+    "code": "NO",
+    "fullName": "New Orleans Saints",
+    "city": "New Orleans",
+    "teamName": "Saints",
+    "website":"https://www.neworleanssaints.com/",
+    "color": "#D3BC8D"
+  },
+  {
+    "id": 22,
+    "code": "NYG",
+    "fullName": "N.Y. Giants",
+    "city": "N.Y. Giants",
+    "teamName": "Giants",
+    "website":"https://www.giants.com/",
+    "color": "#0B2265"
+  },
+  {
+    "id": 23,
+    "code": "NYJ",
+    "fullName": "N.Y. Jets",
+    "city": "N.Y. Jets",
+    "teamName": "Jets",
+    "website":"https://www.newyorkjets.com/",
+    "color": "#003F2D"
+  },
+  {
+    "id": 24,
+    "code": "OAK",
+    "fullName": "Oakland Raiders",
+    "city": "Oakland",
+    "teamName": "Raiders",
+    "website":"https://www.raiders.com/",
+    "color": "#000000"
+  },
+  {
+    "id": 25,
+    "code": "PHI",
+    "fullName": "Philadelphia Eagles",
+    "city": "Philadelphia",
+    "teamName": "Eagles",
+    "website":"https://www.philadelphiaeagles.com/",
+    "color": "#004C54"
+  },
+  {
+    "id": 26,
+    "code": "PIT",
+    "fullName": "Pittsburgh Steelers",
+    "city": "Pittsburgh",
+    "teamName": "Steelers",
+    "website":"https://www.steelers.com/",
+    "color": "#FFB612"
+  },
+  {
+    "id": 27,
+    "code": "SF",
+    "fullName": "San Francisco 49ers",
+    "city": "San Francisco",
+    "teamName": "FortyNiners",
+    "website":"https://www.49ers.com/",
+    "color": "#AA0000"
+  },
+  {
+    "id": 28,
+    "code": "SEA",
+    "fullName": "Seattle Seahawks",
+    "city": "Seattle",
+    "teamName": "Seahawks",
+    "website":"https://www.seahawks.com/",
+    "color": "#002244"
+  },
+  {
+    "id": 29,
+    "code": "TB",
+    "fullName": "Tampa Bay Buccaneers",
+    "city": "Tampa Bay",
+    "teamName": "Buccaneers",
+    "website":"https://www.buccaneers.com/",
+    "color": "#D50A0A"
+  },
+  {
+    "id": 30,
+    "code": "TEN",
+    "fullName": "Tennessee Titans",
+    "city": "Tennessee",
+    "teamName": "Titans",
+    "website":"https://www.titansonline.com/",
+    "color": "#002A5C"
+  },
+  {
+    "id": 31,
+    "code": "WAS",
+    "fullName": "Washington Redskins",
+    "city": "Washington",
+    "teamName": "Redskins",
+    "website":"https://www.redskins.com/",
+    "color": "#773141"
+  }
+]
