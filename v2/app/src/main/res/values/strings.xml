@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NFL Research App V2</string>
+    <string name="DEN">The Broncos</string>
+    <string name="PIT">The Steelers</string>
+    <string name="title_activity_test">test</string>
+    <string name="title_team">Team</string>
+    <string name="title_injury">Injuries</string>
+
+</resources>
