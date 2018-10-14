@@ -15,12 +15,12 @@ public class Position {
 	@Override
 	public String toString() {
 
-		String out = playerPos + "\t ";
+		String out = playerPos + ":\t ";
 
 		if(players.size() == 1){
-			out += "1st: " +players.get(0);
+			out += players.get(0);
 		}else if(players.size() > 1){
-			out += "1st: " + players.get(0) + "\t\t2nd: " + players.get(1);
+			out +=  players.get(0) + "\t - \t" + players.get(1);
 		}
 
 
@@ -29,18 +29,19 @@ public class Position {
 
 	public String FormatString(String pos){
 		String out = pos;
-		if(pos == "WR 1" || pos == "WR 2" || pos == "WR 3" ||
-				pos == "WR1" || pos == "WR2" || pos == "WR3"){
+		if(pos.equals("WR 1") || pos.equals("WR 2") || pos.equals("WR 3") ||
+				pos.equals("WR1") || pos.equals("WR2") || pos.equals("WR3")
+				|| pos.equals("RWR") || pos.equals("LWR")){
 
 			out = "WR";
 
 		}
 
-		if(pos == "PK" || pos == "K"){
+		if(pos.equals("PK") || pos.equals("K")){
 			out = "K";
 		}
 
-		if(pos == "HB" ){
+		if(pos.equals("HB")){
 			out = "RB";
 		}
 

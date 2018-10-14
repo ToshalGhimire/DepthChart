@@ -27,12 +27,19 @@ import NFL.Position;
 
 public class TeamPage extends AppCompatActivity {
 
-//    private String mcode;
     private String mCity;
     private String mTeam;
-//    private String mWebsite;
+
     private ArrayList<Position> mDepthChart;
+
     private TextView fineprint;
+    private  TextView teamText;
+    private  TextView offenseText;
+    private  TextView defenseText;
+
+    private String teamString,offenseString,defenseString;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +48,9 @@ public class TeamPage extends AppCompatActivity {
 
         mDepthChart = new ArrayList<Position>();
         fineprint = (TextView)findViewById(R.id.fineprint_textview);
+        teamText = (TextView)findViewById(R.id.team_textview);
+//        offenseText = (TextView)findViewById(R.id.offenseStats_textview);
+//        defenseText = (TextView)findViewById(R.id.defenseStats_textview);
 
 
         // Getting data from Intent
@@ -80,6 +90,9 @@ public class TeamPage extends AppCompatActivity {
         new getTeam().execute(url);
 
 
+        //teamText.setText(teamString);
+        //offenseText.setText(offenseString);
+        //defenseText.setText(defenseString);
 
     }
 
@@ -90,30 +103,14 @@ public class TeamPage extends AppCompatActivity {
     private class getTeam extends AsyncTask<String, Integer, Void> {
 
         private ProgressBar pb;
-        private TextView trollText;
-        private String defenseStats;
 
-        List<String> trollString = Arrays.asList("When will you venmo Toshal?",
-                "Zeek + Watson > Kamara + Smith",
-                "A-squad or F-squad?",
-                "How about them targaryens?",
-                "Anyone wanna trade for Jonh Brown?",
-                "Beware of Kushals Curse",
-                "Thats why you draft RBs",
-                "if your not demaryius targaryen then your losing",
-                "Be afriad of the targaryens",
-                "Bama needs WR dont trade him"
-            );;
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            trollText = (TextView)findViewById(R.id.trollText_textview);
             pb = (ProgressBar)findViewById(R.id.progressBar);
             pb.setVisibility(View.VISIBLE);
 
-            trollText.setVisibility(View.VISIBLE);
-            trollText.setText(getRandomTrollText());
 
 
         }
@@ -155,10 +152,7 @@ public class TeamPage extends AppCompatActivity {
             TextView positionText = (TextView)findViewById(R.id.teamPage_tv);
 
             pb.setVisibility(View.INVISIBLE);
-            trollText.setVisibility(View.INVISIBLE);
-
             positionText.setText(sortPositions());
-
         }
 
         public String sortPositions(){
@@ -173,14 +167,14 @@ public class TeamPage extends AppCompatActivity {
 
             for(Position p : mDepthChart){
 
-                if (p.playerPos.equals("RB") || p.playerPos.equals("HB")) {
+                if (p.playerPos.equals("RB")) {
                     temp += p.toString() + "\n";
                 }
             }
 
             for(Position p : mDepthChart){
 
-                if (p.playerPos.equals("WR") || p.playerPos.equals("WR 1") || p.playerPos.equals("WR 2") || p.playerPos.equals("WR 3")) {
+                if (p.playerPos.equals("WR")) {
                     temp += p.toString() + "\n";
                 }
             }
@@ -193,17 +187,14 @@ public class TeamPage extends AppCompatActivity {
             }
             for(Position p : mDepthChart){
 
-                if (p.playerPos.equals("PK") || p.playerPos.equals("K")) {
+                if (p.playerPos.equals("K")) {
                     temp += p.toString() + "\n";
                 }
             }
             return temp;
         }
 
-        public String getRandomTrollText() {
-            Random rand = new Random();
-            return trollString.get(rand.nextInt(trollString.size()));
-        }
+
     }
 
     /**
@@ -213,6 +204,7 @@ public class TeamPage extends AppCompatActivity {
         private List<String> stats = null;
         private Scanner S = null;
         private Elements tempElement = null;
+
 
         @Override
         protected List<String> doInBackground(String... strings) {
@@ -239,9 +231,11 @@ public class TeamPage extends AppCompatActivity {
 					}
 				}
 
-				for(int i = 0; i < 5; i ++)
+				// Skiping to Points per game
+				for(int i = 0; i < 2; i ++)
 					S.next();
 
+				stats.add(S.next());
 				stats.add(ordinal(Ranked));
 
 				// PASSing DEFENSE
@@ -309,13 +303,20 @@ public class TeamPage extends AppCompatActivity {
         protected void onPostExecute(List<String> strings) {
             super.onPostExecute(strings);
 
-            TextView def = (TextView)findViewById(R.id.defenseStats_textview);
-            String temp = "The " + mCity + " " + mTeam + " defense are ranked " +  strings.get(0) + " overall "
-                    + "with " + strings.get(1) + " PASSING Yds/G (" + strings.get(2) + ") and "
-                    + strings.get(3) +" RUSHING Yds/G ("+ strings.get(4) + ").";
+            TextView D_ranked = (TextView)findViewById(R.id.D_ranked);
+            TextView D_Points = (TextView)findViewById(R.id.D_Points);
+            TextView D_Passing = (TextView)findViewById(R.id.D_Passing);
+            TextView D_Rushing = (TextView)findViewById(R.id.D_Rushing);
 
-            def.setText(temp);
+//            String temp = "The defense are ranked " +  strings.get(1) + " overall "
+//                    + "with " + strings.get(2) + " PASSING Yds/G (" + strings.get(3) + ") and "
+//                    + strings.get(4) +" RUSHING Yds/G ("+ strings.get(5) + "). They Allow " + strings.get(0) + " points per game.";
 
+
+            D_ranked.setText(strings.get(1));
+            D_Passing.setText(strings.get(2) + " Yds/G (" + strings.get(3) + ")");
+            D_Rushing.setText(strings.get(4) + " Yds/G (" + strings.get(5) + ")");
+            D_Points.setText("Allow " + strings.get(0));
 
         }
 
@@ -366,10 +367,13 @@ public class TeamPage extends AppCompatActivity {
                     }
                 }
 
-                for(int i = 0; i < 5; i ++)
+                // Skiping to Points per game
+                for(int i = 0; i < 2; i ++)
                     S.next();
 
+                stats.add(S.next());
                 stats.add(ordinal(Ranked));
+
 
                 // PASSing DEFENSE
                 Document passDefence_doc = Jsoup.connect(strings[1]).get();
@@ -436,12 +440,20 @@ public class TeamPage extends AppCompatActivity {
         protected void onPostExecute(List<String> strings) {
             super.onPostExecute(strings);
 
-            TextView def = (TextView)findViewById(R.id.offenseStats_textview);
-            String temp = "The " + mCity + " " + mTeam + " offense are ranked " +  strings.get(0) + " overall "
-                    + "with " + strings.get(1) + " PASSING Yds/G (" + strings.get(2) + ") and "
-                    + strings.get(3) +" RUSHING Yds/G ("+ strings.get(4) + ").";
+            TextView O_ranked = (TextView)findViewById(R.id.O_ranked);
+            TextView O_Points = (TextView)findViewById(R.id.O_Points);
+            TextView O_Passing = (TextView)findViewById(R.id.O_Passing);
+            TextView O_Rushing = (TextView)findViewById(R.id.O_Rushing);
 
-            def.setText(temp);
+//            String temp = "The defense are ranked " +  strings.get(1) + " overall "
+//                    + "with " + strings.get(2) + " PASSING Yds/G (" + strings.get(3) + ") and "
+//                    + strings.get(4) +" RUSHING Yds/G ("+ strings.get(5) + "). They Allow " + strings.get(0) + " points per game.";
+
+
+            O_ranked.setText(strings.get(1));
+            O_Passing.setText(strings.get(2) + " Yds/G (" + strings.get(3) + ")");
+            O_Rushing.setText(strings.get(4) + " Yds/G (" + strings.get(5) + ")");
+            O_Points.setText("Average " + strings.get(0));
 
 
         }

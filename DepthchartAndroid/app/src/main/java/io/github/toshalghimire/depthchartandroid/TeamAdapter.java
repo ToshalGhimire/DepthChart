@@ -41,16 +41,10 @@ public class TeamAdapter extends  RecyclerView.Adapter<TeamAdapter.TeamViewHolde
     @Override
     public void onBindViewHolder(@NonNull TeamViewHolder holder, int position) {
         TeamModel team = mTeamList.get(position);
+
         holder.textViewCity.setText(team.getmCity());
         holder.textViewTeam.setText(team.getmTeam());
-
-        String pictureName = team.getmTeam().toLowerCase();
-        if(team.getmTeam() == "49ers"){
-            pictureName = "ers";
-        }
-        int resID = res.getIdentifier(pictureName , "drawable", mContex.getPackageName());
-        holder.imageView.setImageResource(resID);
-
+        holder.imageView.setImageResource(team.getLogo());
 
         holder.setScraperLink(team.getmWebsite());
         holder.setTeamCity(team.getmCity());
@@ -71,21 +65,20 @@ public class TeamAdapter extends  RecyclerView.Adapter<TeamAdapter.TeamViewHolde
         TextView textViewCity, textViewTeam;
         CardView cv;
 
+        String scraperLink;
+        String teamName;
+        String teamCity;
+
         public String getScraperLink() {
             return scraperLink + "team/depth-chart";
         }
-
         public void setScraperLink(String scraperLink) {
             this.scraperLink = scraperLink;
         }
 
-        String scraperLink;
-        String teamName;
-
         public String getTeamName() {
             return teamName;
         }
-
         public void setTeamName(String teamName) {
             this.teamName = teamName;
         }
@@ -93,12 +86,11 @@ public class TeamAdapter extends  RecyclerView.Adapter<TeamAdapter.TeamViewHolde
         public String getTeamCity() {
             return teamCity;
         }
-
         public void setTeamCity(String teamCity) {
             this.teamCity = teamCity;
         }
 
-        String teamCity;
+
 
 
         Context contexVH;
