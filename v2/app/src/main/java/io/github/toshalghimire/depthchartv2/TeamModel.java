@@ -1,50 +1,51 @@
 package io.github.toshalghimire.depthchartv2;
 
 public class TeamModel {
-    private String mCode;
-    private String mCity;
-    private String mTeam;
-    private String mWebsite;
-    private String mFullName;
-    private String mBackgroundColor;
+    private String teamCode;
+    private String teamCity;
+    private String teamName;
+    private String teamWebsite;
+    private String teamFullName;
+    private String teamBackgroundColor;
     private int logo;
 
 
 
-    public TeamModel(String mCode, String mCity, String mTeam, String mWebsite, String mBackgroundColor) {
-        this.mCode = mCode;
-        this.mCity = mCity;
-        this.mTeam = mTeam;
-        this.mWebsite = mWebsite;
-        this.mBackgroundColor = mBackgroundColor;
-        this.logo = getLogoRes(mTeam);
 
-        this.mFullName = mCity + " " + mTeam;
+    public TeamModel(String teamCode, String teamCity, String teamName, String mWebsite, String teamBackgroundColor) {
+        this.teamCode = teamCode;
+        this.teamCity = teamCity;
+        this.teamName = teamName;
+        this.teamWebsite = mWebsite;
+        this.teamBackgroundColor = teamBackgroundColor;
+        this.logo = getLogoRes(teamName);
+
+        this.teamFullName = teamCity + " " + teamName;
     }
 
 
     public int getLogo() { return logo; }
 
-    public String getmCode() {
-        return mCode;
+    public String getTeamCode() {
+        return teamCode;
     }
 
-    public String getmCity() {
-        return mCity;
+    public String getTeamCity() {
+        return teamCity;
     }
 
-    public String getmTeam() { return mTeam; }
+    public String getTeamName() { return teamName; }
 
-    public String getmWebsite() {
-        return mWebsite;
+    public String getTeamWebsite() {
+        return teamWebsite;
     }
 
-    public String getmFullName() {
-        return mFullName;
+    public String getTeamFullName() {
+        return teamFullName;
     }
 
-    public String getmBackgroundColor() {
-        return mBackgroundColor;
+    public String getTeamBackgroundColor() {
+        return teamBackgroundColor;
     }
 
     public int getLogoRes(String teamName){

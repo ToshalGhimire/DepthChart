@@ -1,6 +1,5 @@
 package io.github.toshalghimire.depthchartv2;
 
-import android.os.AsyncTask;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,7 +10,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,11 +22,11 @@ import java.util.List;
 
 public class HomeActivity extends AppCompatActivity implements SearchView.OnQueryTextListener{
 
-    List<TeamModel> mTeamList = new ArrayList<>();
+    private List<TeamModel> teamList = new ArrayList<>();
 
-    RecyclerView recyclerView;
-    TeamAdapter teamAdapter;
-    Boolean injuryPressed;
+    private RecyclerView recyclerView;
+    private TeamAdapter teamAdapter;
+    private Boolean injuryPressed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,10 +49,10 @@ public class HomeActivity extends AppCompatActivity implements SearchView.OnQuer
 
         for (int i = 0; i < 32; i++) {
             TeamModel temp = new TeamModel(code.get(i), city.get(i), teamName.get(i), website.get(i), color.get(i));
-            mTeamList.add(temp);
+            teamList.add(temp);
         }
 
-        teamAdapter = new TeamAdapter(this, mTeamList);
+        teamAdapter = new TeamAdapter(this, teamList);
         recyclerView.setAdapter(teamAdapter);
 
 
@@ -82,11 +80,11 @@ public class HomeActivity extends AppCompatActivity implements SearchView.OnQuer
 
         newText = newText.toLowerCase().trim();
         ArrayList<TeamModel> newList = new ArrayList<>();
-        for(TeamModel tm : mTeamList){
-            String team = tm.getmTeam().toLowerCase();
-            String city = tm.getmCity().toLowerCase();
-            String full = tm.getmFullName().toLowerCase();
-            String code = tm.getmCode().toLowerCase();
+        for(TeamModel tm : teamList){
+            String team = tm.getTeamName().toLowerCase();
+            String city = tm.getTeamCity().toLowerCase();
+            String full = tm.getTeamFullName().toLowerCase();
+            String code = tm.getTeamCode().toLowerCase();
             if(team.contains(newText) || city.contains(newText) || full.contains(newText) || code.contains(newText)){
                 newList.add(tm);
             }

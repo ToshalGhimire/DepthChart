@@ -43,16 +43,16 @@ public class TeamAdapter extends  RecyclerView.Adapter<TeamAdapter.TeamViewHolde
     public void onBindViewHolder(@NonNull TeamViewHolder holder, int position) {
         TeamModel team = mTeamList.get(position);
 
-        holder.textViewCity.setText(team.getmCity());
-        holder.textViewTeam.setText(team.getmTeam());
+        holder.textViewCity.setText(team.getTeamCity());
+        holder.textViewTeam.setText(team.getTeamName());
         holder.imageView.setImageResource(team.getLogo());
 
-        holder.setScraperLink(team.getmWebsite());
-        holder.setTeamCity(team.getmCity());
-        holder.setTeamName(team.getmTeam());
-        holder.setTeamColor(team.getmBackgroundColor());
+        holder.setScraperLink(team.getTeamWebsite());
+        holder.setTeamCity(team.getTeamCity());
+        holder.setTeamName(team.getTeamName());
+        holder.setTeamColor(team.getTeamBackgroundColor());
 
-        int color = Color.parseColor(team.getmBackgroundColor());
+        int color = Color.parseColor(team.getTeamBackgroundColor());
         holder.cv.setCardBackgroundColor(color);
     }
 
