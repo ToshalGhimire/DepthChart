@@ -1,12 +1,11 @@
-# NFL Depth Chart : for fantasy players
+# Depth Chart : for fantasy players
 
 Creator: Toshal Ghimire
 
 Title: Depth Chart
 
 Description: An android app that scrapes the web in order to retrieve up to date depth chart from NFL teams.  Intended to be used by fans who also play fantasy football. It will display only the positions that are used in fantasy football and also the teams defensive stats. 
-
-Actors: Fortnite players 
+ 
 
 Actors: Fantasy Football Players
 
