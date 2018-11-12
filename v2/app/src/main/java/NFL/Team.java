@@ -11,9 +11,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import io.github.toshalghimire.depthchartv2.HomeActivity;
-import io.github.toshalghimire.depthchartv2.R;
-
 public abstract class Team {
 	protected String teamName;
 	protected String city;

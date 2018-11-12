@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
 
     <item
         android:id="@+id/action_searh"
-        android:title="Search"
         android:icon="@drawable/ic_action_searchw"
-        app:showAsAction="always|collapseActionView"
+        android:title="Search"
         app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="always"
+
         ></item>
 
+
     <item
-        android:id="@+id/action_injury"
+        android:id="@+id/action_news"
         android:title="Injuries"
-        android:icon="@drawable/ic_nav_injuryw"
-        android:visible="false"
-        app:showAsAction="always|collapseActionView"
+        android:icon="@drawable/ic_action_news"
+        android:visible="true"
+        app:showAsAction="always"
         ></item>
+
+
+
 
 
 

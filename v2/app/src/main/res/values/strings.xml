@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NFL Research App V2</string>
+    <string name="app_name">NFL Teams</string>
     <string name="DEN">The Broncos</string>
     <string name="PIT">The Steelers</string>
     <string name="title_activity_test">test</string>

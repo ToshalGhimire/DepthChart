@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightgray"
+    tools:context=".Activity.teamPage_V02Activity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+        <LinearLayout
+            android:id="@+id/gradient_LinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:orientation="vertical">
+            
+            <ImageView
+                android:layout_marginTop="15dp"
+                android:id="@+id/logo_imageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                />
+            
+            <TextView
+                android:layout_marginTop="-5dp"
+                android:id="@+id/teamName_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Team Name"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <TextView
+                android:id="@+id/TapInformation"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tap To Switch"
+                android:textSize="15sp"
+                android:textColor="#8b898a"
+                android:layout_marginTop="110dp"
+                />
+
+
+        </LinearLayout>
+
+        <com.wajahatkarim3.easyflipview.EasyFlipView
+            android:id="@+id/Stats_flipview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            app:flipDuration="400"
+            app:flipEnabled="true"
+            app:flipFrom="front"
+            app:flipOnTouch="true"
+            app:flipType="vertical"
+
+            >
+
+            <!-- Defense !-->
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/defense_cardview"
+                android:layout_width="320dp"
+                android:layout_height="90dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="220dp"
+                card_view:cardCornerRadius="15dp"
+                card_view:cardElevation="3dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/D_Rank_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Defense"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:paddingTop="5dp"
+                        android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:id="@+id/D_horizontal_linearlayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <!-- Points Layout !-->
+                        <LinearLayout
+                            android:id="@+id/D_points_linearlayout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/D_Points_label_textview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="0dp"
+                                android:text="Points"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/D_Points_textview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="5dp"
+                                android:text="22.3 PPG"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <!-- Passing Layout !-->
+                        <LinearLayout
+                            android:id="@+id/D_Passing_linearlayout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/D_Passing_label_textview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="0dp"
+                                android:text="Passing"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/D_Passing_textview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="5dp"
+                                android:text="300 Yds/G"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <!-- Rusing Layout !-->
+                        <LinearLayout
+                            android:id="@+id/D_Rushing_linearlayout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/D_Rushing_label_textview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="0dp"
+                                android:text="Rushing"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/D_Rushing_textview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="5dp"
+                                android:text="100 Yds/G"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- Offense !-->
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/offense_cardview"
+                android:layout_width="320dp"
+                android:layout_height="90dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="220dp"
+                card_view:cardCornerRadius="15dp"
+                card_view:cardElevation="3dp">
+
+                <ProgressBar
+                    android:id="@+id/progressBar_stats"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/O_Rank_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Offense"
+                            android:textStyle="bold"
+                            android:textSize="20dp"
+                            android:paddingTop="5dp"
+                            android:layout_gravity="center"/>
+
+                    <LinearLayout
+                        android:id="@+id/O_horizontal_linearlayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <!-- Points Layout !-->
+                        <LinearLayout
+                            android:id="@+id/points_linearlayout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/O_Points_label_textview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="0dp"
+                                android:text="Points"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/O_Points_textview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="5dp"
+                                android:text="22.3 PPG"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <!-- Passing Layout !-->
+                        <LinearLayout
+                            android:id="@+id/Passing_linearlayout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/O_Passing_label_textview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="0dp"
+                                android:text="Passing"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/O_Passing_textview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="5dp"
+                                android:text="300 Yds/G"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <!-- Rusing Layout !-->
+                        <LinearLayout
+                            android:id="@+id/Rushing_linearlayout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/O_Rushing_label_textview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="0dp"
+                                android:text="Rushing"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/O_Rushing_textview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="5dp"
+                                android:text="100 Yds/G"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+        </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+    </RelativeLayout>
+
+    <android.support.v4.widget.ContentLoadingProgressBar
+        android:id="@+id/progressBar_depthChart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+
+            >
+            <TextView
+                android:id="@+id/Player_pos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loading Depth Chart.."
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
