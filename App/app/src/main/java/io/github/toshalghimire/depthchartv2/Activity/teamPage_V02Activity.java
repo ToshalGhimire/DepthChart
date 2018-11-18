@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import NFL.Position;
+import io.github.toshalghimire.depthchartv2.Models.DataSingleton;
 import io.github.toshalghimire.depthchartv2.R;
 
 public class teamPage_V02Activity extends AppCompatActivity {
@@ -100,24 +101,41 @@ public class teamPage_V02Activity extends AppCompatActivity {
 
         teamName_textview.setText("The " + intent.getStringExtra("teamName"));
 
-        String[] Offense_URL = {"http://www.nfl.com/stats/categorystats?tabSeq=2&offensiveStatisticCategory=GAME_STATS&conference=ALL&role=TM&season=2018&seasonType=REG&d-447263-s=TOTAL_YARDS_GAME_AVG&d-447263-o=2&d-447263-n=1",
-                "http://www.nfl.com/stats/categorystats?tabSeq=2&offensiveStatisticCategory=TEAM_PASSING&conference=ALL&role=TM&season=2018&seasonType=REG&d-447263-s=PASSING_NET_YARDS_GAME_AVG&d-447263-o=2&d-447263-n=1",
-                "http://www.nfl.com/stats/categorystats?tabSeq=2&offensiveStatisticCategory=RUSHING&conference=ALL&role=TM&season=2018&seasonType=REG&d-447263-s=RUSHING_YARDS_PER_GAME_AVG&d-447263-o=2&d-447263-n=1",
-        };
+//        String[] Offense_URL = {"http://www.nfl.com/stats/categorystats?tabSeq=2&offensiveStatisticCategory=GAME_STATS&conference=ALL&role=TM&season=2018&seasonType=REG&d-447263-s=TOTAL_YARDS_GAME_AVG&d-447263-o=2&d-447263-n=1",
+//                "http://www.nfl.com/stats/categorystats?tabSeq=2&offensiveStatisticCategory=TEAM_PASSING&conference=ALL&role=TM&season=2018&seasonType=REG&d-447263-s=PASSING_NET_YARDS_GAME_AVG&d-447263-o=2&d-447263-n=1",
+//                "http://www.nfl.com/stats/categorystats?tabSeq=2&offensiveStatisticCategory=RUSHING&conference=ALL&role=TM&season=2018&seasonType=REG&d-447263-s=RUSHING_YARDS_PER_GAME_AVG&d-447263-o=2&d-447263-n=1",
+//        };
+//
+//        new teamPage_V02Activity.getOffense().execute(Offense_URL[0],Offense_URL[1],Offense_URL[2]);
 
-        new teamPage_V02Activity.getOffense().execute(Offense_URL[0],Offense_URL[1],Offense_URL[2]);
+        DataSingleton obj = DataSingleton.getInstance();
 
-        String[] Defense_URL = {"http://www.nfl.com/stats/categorystats?tabSeq=2&defensiveStatisticCategory=GAME_STATS&conference=ALL&role=OPP&season=2018&seasonType=REG&d-447263-s=TOTAL_YARDS_GAME_AVG&d-447263-o=1&d-447263-n=1",
-                "http://www.nfl.com/stats/categorystats?tabSeq=2&defensiveStatisticCategory=TEAM_PASSING&conference=ALL&role=OPP&season=2018&seasonType=REG&d-447263-s=PASSING_NET_YARDS_GAME_AVG&d-447263-o=1&d-447263-n=1",
-                "http://www.nfl.com/stats/categorystats?tabSeq=2&defensiveStatisticCategory=RUSHING&conference=ALL&role=OPP&season=2018&seasonType=REG&d-447263-s=RUSHING_YARDS_PER_GAME_AVG&d-447263-o=1&d-447263-n=1",
-        };
+        List<String> offenseStats = obj.getOffenseStats(mTeam);
+        setOffenseTextView(offenseStats);
 
-        new teamPage_V02Activity.getDefense().execute(Defense_URL[0],Defense_URL[1],Defense_URL[2]);
-
+        List<String> defenseStats = obj.getDefenseStats(mTeam);
+        setDefenseTextView(defenseStats);
 
         String url = intent.getStringExtra("ScraperLink");
         new teamPage_V02Activity.getTeam().execute(url);
 
+    }
+
+
+    private void setOffenseTextView(List<String> Data){
+        O_Rank_textview.setText("Offense Ranked " + Data.get(1));
+        O_Rank_textview.setTextColor(Color.parseColor("#19000A"));
+        O_Passing_textview.setText(Data.get(2) + " Yds/G");
+        O_Rushing_textview.setText(Data.get(4) + " Yds/G");
+        O_Points_textview.setText(Data.get(0) + " P/G");
+    }
+
+    private void setDefenseTextView(List<String> Data){
+        D_Rank_textview.setText("Defense Ranked " + Data.get(1));
+        D_Rank_textview.setTextColor(Color.parseColor("#19000A"));
+        D_Passing_textview.setText(Data.get(2) + " Yds/G");
+        D_Rushing_textview.setText(Data.get(4) + " Yds/G");
+        D_Points_textview.setText(Data.get(0) + " P/G");
     }
 
     private void setGradiantBackground(){
@@ -128,330 +146,10 @@ public class teamPage_V02Activity extends AppCompatActivity {
 
     }
 
-    /**
-     * AsyncTask to get the teams Offense stats and display it on offense_textview.
-     */
-    public class getOffense extends AsyncTask<String,Void,List<String>> {
-        private List<String> stats = null;
-        private Scanner S = null;
-        private Elements tempElement = null;
-
-        TextView O_ranked = (TextView)findViewById(R.id.O_Rank_textview);
-        TextView O_Points = (TextView)findViewById(R.id.O_Points_textview);
-        TextView O_Passing = (TextView)findViewById(R.id.O_Passing_textview);
-        TextView O_Rushing = (TextView)findViewById(R.id.O_Rushing_textview);
-        TextView O_Points_label = (TextView)findViewById(R.id.O_Points_label_textview);
-        TextView O_Passing_label = (TextView)findViewById(R.id.O_Passing_label_textview);
-        TextView O_Rushing_label = (TextView)findViewById(R.id.O_Rushing_label_textview);
-
-        ProgressBar pb = (ProgressBar)findViewById(R.id.progressBar_stats);
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-            O_Points_label.setVisibility(View.INVISIBLE);
-            O_Passing_label.setVisibility(View.INVISIBLE);
-            O_Rushing_label.setVisibility(View.INVISIBLE);
-            O_ranked.setVisibility(View.INVISIBLE);
-            O_Passing.setVisibility(View.INVISIBLE);
-            O_Rushing.setVisibility(View.INVISIBLE);
-            O_Points.setVisibility(View.INVISIBLE);
-
-            pb.setVisibility(View.VISIBLE);
-
-
-        }
-
-        @Override
-        protected List<String> doInBackground(String... strings) {
-
-            stats = new ArrayList<>();
-
-            try {
-                // TOTAL DEFENSE
-                Document totalDefence_doc = Jsoup.connect(strings[0]).get();
-                tempElement = totalDefence_doc.select("tbody").select("tr");
-
-                String Ranked = "";
-                for (int i = 0; i < 33; i++) {
-                    String ElementString = tempElement.get(i).text();
-
-                    if(ElementString.contains(mTeam)) {
-                        S = new Scanner(ElementString);
-                        Ranked = S.next();
-
-                        while(!S.hasNext(mTeam))
-                            S.next();
-
-                        break;
-                    }
-                }
-
-                // Skiping to Points per game
-                for(int i = 0; i < 2; i ++)
-                    S.next();
-
-                stats.add(S.next());
-                stats.add(ordinal(Ranked));
-
-
-                // PASSing DEFENSE
-                Document passDefence_doc = Jsoup.connect(strings[1]).get();
-                tempElement = passDefence_doc.select("tbody").select("tr");
-
-
-                Ranked = "";
-                for (int i = 0; i < 33; i++) {
-                    String ElementString = tempElement.get(i).text();
-
-                    if(ElementString.contains(mTeam)) {
-                        S = new Scanner(ElementString);
-                        Ranked = S.next();
-
-                        while(!S.hasNext(mTeam))
-                            S.next();
-
-                        break;
-                    }
-                }
-
-                for(int i = 0; i < 10; i ++)
-                    S.next();
-
-                stats.add(S.next());
-                stats.add(ordinal(Ranked));
-
-                // RUSHING DEFENSE
-                Document rushDefence_doc  = Jsoup.connect(strings[2]).get();
-                tempElement = rushDefence_doc.select("tbody").select("tr");
-
-
-                Ranked = "";
-                for (int i = 0; i < 33; i++) {
-                    String ElementString = tempElement.get(i).text();
-
-                    if(ElementString.contains(mTeam)) {
-                        S = new Scanner(ElementString);
-                        Ranked = S.next();
-
-                        while(!S.hasNext(mTeam))
-                            S.next();
-
-                        break;
-                    }
-                }
-
-                for(int i = 0; i < 8; i ++)
-                    S.next();
-
-                stats.add(S.next());
-                stats.add(ordinal(Ranked));
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-
-            return stats;
-        }
-
-
-        @Override
-        protected void onPostExecute(List<String> strings) {
-            super.onPostExecute(strings);
-
-
-//            String temp = "The defense are ranked " +  strings.get(1) + " overall "
-//                    + "with " + strings.get(2) + " PASSING Yds/G (" + strings.get(3) + ") and "
-//                    + strings.get(4) +" RUSHING Yds/G ("+ strings.get(5) + "). They Allow " + strings.get(0) + " points per game.";
-
-
-
-            O_Passing_label.setText("Pass (" + strings.get(3) + ")");
-            O_Rushing_label.setText("Rush (" + strings.get(5) + ")");
-
-            O_Points_label.setVisibility(View.VISIBLE);
-            O_Passing_label.setVisibility(View.VISIBLE);
-            O_Rushing_label.setVisibility(View.VISIBLE);
-
-            O_ranked.setVisibility(View.VISIBLE);
-            O_Passing.setVisibility(View.VISIBLE);
-            O_Rushing.setVisibility(View.VISIBLE);
-            O_Points.setVisibility(View.VISIBLE);
-            pb.setVisibility(View.GONE);
-
-            O_ranked.setText("Offense Ranked " + strings.get(1));
-            O_ranked.setTextColor(Color.parseColor("#19000A"));
-            O_Passing.setText(strings.get(2) + " Yds/G");//(" + strings.get(3) + ")");
-            O_Rushing.setText(strings.get(4) + " Yds/G");// (" + strings.get(5) + ")");
-            O_Points.setText(strings.get(0) + " P/G");
-
-
-        }
-
-        public  String ordinal(String input) {
-            int i = Integer.parseInt(input);
-            String[] sufixes = new String[] { "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th" };
-            switch (i % 100) {
-                case 11:
-                case 12:
-                case 13:
-                    return i + "th";
-                default:
-                    return i + sufixes[i % 10];
-            }
-        }
-    }
 
 
     /**
-     * AsyncTask to get the teams Defense stats and display it on defense_textview.
-     */
-    public class getDefense extends AsyncTask<String,Void,List<String>>{
-        private List<String> stats = null;
-        private Scanner S = null;
-        private Elements tempElement = null;
-
-        TextView D_ranked = (TextView)findViewById(R.id.D_Rank_textview);
-        TextView D_Points = (TextView)findViewById(R.id.D_Points_textview);
-        TextView D_Passing = (TextView)findViewById(R.id.D_Passing_textview);
-        TextView D_Rushing = (TextView)findViewById(R.id.D_Rushing_textview);
-
-        TextView D_Points_label = (TextView)findViewById(R.id.D_Points_label_textview);
-        TextView D_Passing_label = (TextView)findViewById(R.id.D_Passing_label_textview);
-        TextView D_Rushing_label = (TextView)findViewById(R.id.D_Rushing_label_textview);
-
-
-        @Override
-        protected List<String> doInBackground(String... strings) {
-
-            stats = new ArrayList<>();
-
-            try {
-                // TOTAL DEFENSE
-                Document totalDefence_doc = Jsoup.connect(strings[0]).get();
-                tempElement = totalDefence_doc.select("tbody").select("tr");
-
-                String Ranked = "";
-                for (int i = 0; i < 33; i++) {
-                    String ElementString = tempElement.get(i).text();
-
-                    if(ElementString.contains(mTeam)) {
-                        S = new Scanner(ElementString);
-                        Ranked = S.next();
-
-                        while(!S.hasNext(mTeam))
-                            S.next();
-
-                        break;
-                    }
-                }
-
-                // Skiping to Points per game
-                for(int i = 0; i < 2; i ++)
-                    S.next();
-
-                stats.add(S.next());
-                stats.add(ordinal(Ranked));
-
-                // PASSing DEFENSE
-                Document passDefence_doc = Jsoup.connect(strings[1]).get();
-                tempElement = passDefence_doc.select("tbody").select("tr");
-
-
-                Ranked = "";
-                for (int i = 0; i < 33; i++) {
-                    String ElementString = tempElement.get(i).text();
-
-                    if(ElementString.contains(mTeam)) {
-                        S = new Scanner(ElementString);
-                        Ranked = S.next();
-
-                        while(!S.hasNext(mTeam))
-                            S.next();
-
-                        break;
-                    }
-                }
-
-                for(int i = 0; i < 10; i ++)
-                    S.next();
-
-                stats.add(S.next());
-                stats.add(ordinal(Ranked));
-
-                // RUSHING DEFENSE
-                Document rushDefence_doc  = Jsoup.connect(strings[2]).get();
-                tempElement = rushDefence_doc.select("tbody").select("tr");
-
-
-                Ranked = "";
-                for (int i = 0; i < 33; i++) {
-                    String ElementString = tempElement.get(i).text();
-
-                    if(ElementString.contains(mTeam)) {
-                        S = new Scanner(ElementString);
-                        Ranked = S.next();
-
-                        while(!S.hasNext(mTeam))
-                            S.next();
-
-                        break;
-                    }
-                }
-
-                for(int i = 0; i < 8; i ++)
-                    S.next();
-
-                stats.add(S.next());
-                stats.add(ordinal(Ranked));
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-
-            return stats;
-        }
-
-
-        @Override
-        protected void onPostExecute(List<String> strings) {
-            super.onPostExecute(strings);
-
-//            String temp = "The defense are ranked " +  strings.get(1) + " overall "
-//                    + "with " + strings.get(2) + " PASSING Yds/G (" + strings.get(3) + ") and "
-//                    + strings.get(4) +" RUSHING Yds/G ("+ strings.get(5) + "). They Allow " + strings.get(0) + " points per game.";
-
-
-            D_Passing_label.setText("Pass (" + strings.get(3) + ")");
-            D_Rushing_label.setText("Rush (" + strings.get(5) + ")");
-
-            D_ranked.setText("Defense Ranked " + strings.get(1));
-            D_ranked.setTextColor(Color.parseColor("#19000A"));
-            D_Passing.setText(strings.get(2) + " Yds/G");// (" + strings.get(3) + ")");
-            D_Rushing.setText(strings.get(4) + " Yds/G");// (" + strings.get(5) + ")");
-            D_Points.setText(strings.get(0) +" P/G");
-
-        }
-
-        public  String ordinal(String input) {
-            int i = Integer.parseInt(input);
-            String[] sufixes = new String[] { "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th" };
-            switch (i % 100) {
-                case 11:
-                case 12:
-                case 13:
-                    return i + "th";
-                default:
-                    return i + sufixes[i % 10];
-            }
-        }
-    }
-
-    /**
-     * AsyncTask to get the teams Offense stats and display it on offense_textview.
+     * AsyncTask to get the teams Depthchart and display it on the page.
      */
     private class getTeam extends AsyncTask<String, Integer, Void> {
 

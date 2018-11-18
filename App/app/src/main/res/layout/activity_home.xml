@@ -12,20 +12,33 @@
     >
 
 
-
-
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
-
             <include layout="@layout/hometoolbar"/>
 
 
+        <android.support.design.widget.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tablayout"
+            android:background="@color/colorWhite"
+            app:tabTextColor="@color/colorGray"
+            app:tabSelectedTextColor="@color/colorTabSelected"
+            android:minHeight="?attr/actionBarSize">
+
+        </android.support.design.widget.TabLayout>
 
     </android.support.design.widget.AppBarLayout>
 
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- Your fragment -->
 
     <TextView
         android:id="@+id/notFound"
@@ -38,6 +51,22 @@
         android:layout_gravity="center"
         />
 
+
+
+
+
+            <android.support.v4.view.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/viewPager">
+
+            </android.support.v4.view.ViewPager>
+
+    </FrameLayout>
+
+
+
+    <!--
         <android.support.v7.widget.RecyclerView
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:id="@+id/teamRecyclerView"
@@ -45,7 +74,7 @@
             android:layout_height="match_parent">
         </android.support.v7.widget.RecyclerView>
 
-
+    -->
 
 
 

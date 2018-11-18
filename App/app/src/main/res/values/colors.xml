@@ -4,7 +4,13 @@
     <color name="colorSecondary">#fff</color>
     <color name="colorPrimaryDark">#000</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="lightgray">#D3D3D3</color>
+    <color name="colorLightgray">#D3D3D3</color>
+
+    <color name="colorGray">#778899</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorTabSelected">#000</color>
+
+
 
     <color name="color_Cardinals">#97233F</color>
     <color name="color_Falcons">#A71930</color>

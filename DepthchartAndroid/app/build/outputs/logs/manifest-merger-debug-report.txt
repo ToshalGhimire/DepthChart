@@ -1,0 +1,133 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:2:1-24:12
+MERGED from [com.android.support:design:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\51faa800dccafca9e9622391860d3336\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\60810e720562f79794ad3c717dbe9373\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\630e383352cd4ff6952b2dbe0d3db6c1\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\93ed11982277acc056c632dd705a5968\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\67651efc4a31913bac7eb50c5ba08041\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\a0aef17f95378c9debae7cd15be85faa\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\09569675ea6b4730be8e960e4f9c8596\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\22853a7aac5973f1713f9c7826665f78\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\8b4a690495c01857d2dbb7d6a42f8c7f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\e58eb238068b44adf72bf26d43fe8c99\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\c7177fce86bee1128652c9d0d4f192ce\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\3a3d10613fbbc038242c321fa4d6c9ac\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\1d4cb59f1b12763baec800092d64c28e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\ec30365d0f20a0b818f6743099bf90d2\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\07220e2df277b2e77d2383bf68905a4d\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\6689e167107514d173fc93936b6fe354\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\20dd6b1df4868b943ef0b997aa1b5502\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\563b60499e94a9cec83cee551560ce42\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:2:1-24:12
+	package
+		ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:3:5-56
+		INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:2:1-24:12
+		INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:2:1-24:12
+		INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:6:22-76
+application
+ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:8:5-22:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\630e383352cd4ff6952b2dbe0d3db6c1\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\630e383352cd4ff6952b2dbe0d3db6c1\AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:13:9-35
+	android:label
+		ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:11:9-41
+	android:roundIcon
+		ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:12:9-54
+	android:icon
+		ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:10:9-43
+	android:allowBackup
+		ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:9:9-35
+	android:theme
+		ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:14:9-40
+activity#io.github.toshalghimire.depthchartandroid.HomeScreen
+ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:15:9-20:20
+	android:name
+		ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:15:19-45
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:16:13-19:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:17:17-69
+	android:name
+		ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:17:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:18:17-77
+	android:name
+		ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:18:27-74
+activity#io.github.toshalghimire.depthchartandroid.TeamPage
+ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:21:9-55
+	android:name
+		ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml:21:19-43
+uses-sdk
+INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\51faa800dccafca9e9622391860d3336\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\51faa800dccafca9e9622391860d3336\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\60810e720562f79794ad3c717dbe9373\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\60810e720562f79794ad3c717dbe9373\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\630e383352cd4ff6952b2dbe0d3db6c1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\630e383352cd4ff6952b2dbe0d3db6c1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\93ed11982277acc056c632dd705a5968\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\93ed11982277acc056c632dd705a5968\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\67651efc4a31913bac7eb50c5ba08041\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\67651efc4a31913bac7eb50c5ba08041\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\a0aef17f95378c9debae7cd15be85faa\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\a0aef17f95378c9debae7cd15be85faa\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\09569675ea6b4730be8e960e4f9c8596\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\09569675ea6b4730be8e960e4f9c8596\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\22853a7aac5973f1713f9c7826665f78\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\22853a7aac5973f1713f9c7826665f78\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\8b4a690495c01857d2dbb7d6a42f8c7f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\8b4a690495c01857d2dbb7d6a42f8c7f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\e58eb238068b44adf72bf26d43fe8c99\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\e58eb238068b44adf72bf26d43fe8c99\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\c7177fce86bee1128652c9d0d4f192ce\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\c7177fce86bee1128652c9d0d4f192ce\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\3a3d10613fbbc038242c321fa4d6c9ac\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\3a3d10613fbbc038242c321fa4d6c9ac\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\1d4cb59f1b12763baec800092d64c28e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\1d4cb59f1b12763baec800092d64c28e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\ec30365d0f20a0b818f6743099bf90d2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\ec30365d0f20a0b818f6743099bf90d2\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\07220e2df277b2e77d2383bf68905a4d\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\07220e2df277b2e77d2383bf68905a4d\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\6689e167107514d173fc93936b6fe354\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\6689e167107514d173fc93936b6fe354\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\20dd6b1df4868b943ef0b997aa1b5502\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\20dd6b1df4868b943ef0b997aa1b5502\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\563b60499e94a9cec83cee551560ce42\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\tosha\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\563b60499e94a9cec83cee551560ce42\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\tosha\Desktop\DepthChart\DepthchartAndroid\app\src\main\AndroidManifest.xml
