@@ -1,0 +1,8 @@
+NFL
+io.github.toshalghimire.depthchartv2
+io.github.toshalghimire.depthchartv2.Activity
+io.github.toshalghimire.depthchartv2.Fragments.NFL.NewsFagment
+io.github.toshalghimire.depthchartv2.Fragments.NFL.PageAdapterFragment
+io.github.toshalghimire.depthchartv2.Fragments.NFL.TeamFragment
+io.github.toshalghimire.depthchartv2.ListAdapters
+io.github.toshalghimire.depthchartv2.Models
