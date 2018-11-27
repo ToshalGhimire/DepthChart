@@ -1,6 +1,8 @@
 package io.github.toshalghimire.depthchartv2.Models;
 
+import android.content.Context;
 import android.os.AsyncTask;
+import android.widget.Toast;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -10,6 +12,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import io.github.toshalghimire.depthchartv2.Activity.HomeActivity;
 
 public class DataSingleton {
     // Offense
@@ -23,10 +27,15 @@ public class DataSingleton {
     private Elements PassingDefenseElement = null;
     private Elements RushingDefenseElement = null;
 
+    // Contex
+    private Context context;
+
     // Singleton instance
     private static DataSingleton instance;
 
-
+    /**
+     * Constructor that gets the data from the internet and saves it to its fields.
+     */
     private DataSingleton(){
         String[] Offense_URL = {"http://www.nfl.com/stats/categorystats?tabSeq=2&offensiveStatisticCategory=GAME_STATS&conference=ALL&role=TM&season=2018&seasonType=REG&d-447263-s=TOTAL_YARDS_GAME_AVG&d-447263-o=2&d-447263-n=1",
                 "http://www.nfl.com/stats/categorystats?tabSeq=2&offensiveStatisticCategory=TEAM_PASSING&conference=ALL&role=TM&season=2018&seasonType=REG&d-447263-s=PASSING_NET_YARDS_GAME_AVG&d-447263-o=2&d-447263-n=1",
@@ -43,6 +52,31 @@ public class DataSingleton {
 
     }
 
+    /**
+     * Overloaded Constructor that gets the data from the internet and saves it to its fields and also sets the contex of the singleton
+     * @param context
+     */
+    private DataSingleton(Context context){
+        String[] Offense_URL = {"http://www.nfl.com/stats/categorystats?tabSeq=2&offensiveStatisticCategory=GAME_STATS&conference=ALL&role=TM&season=2018&seasonType=REG&d-447263-s=TOTAL_YARDS_GAME_AVG&d-447263-o=2&d-447263-n=1",
+                "http://www.nfl.com/stats/categorystats?tabSeq=2&offensiveStatisticCategory=TEAM_PASSING&conference=ALL&role=TM&season=2018&seasonType=REG&d-447263-s=PASSING_NET_YARDS_GAME_AVG&d-447263-o=2&d-447263-n=1",
+                "http://www.nfl.com/stats/categorystats?tabSeq=2&offensiveStatisticCategory=RUSHING&conference=ALL&role=TM&season=2018&seasonType=REG&d-447263-s=RUSHING_YARDS_PER_GAME_AVG&d-447263-o=2&d-447263-n=1",
+        };
+        new getOffense().execute(Offense_URL[0],Offense_URL[1],Offense_URL[2]);
+
+        String[] Defense_URL = {"http://www.nfl.com/stats/categorystats?tabSeq=2&defensiveStatisticCategory=GAME_STATS&conference=ALL&role=OPP&season=2018&seasonType=REG&d-447263-s=TOTAL_YARDS_GAME_AVG&d-447263-o=1&d-447263-n=1",
+                "http://www.nfl.com/stats/categorystats?tabSeq=2&defensiveStatisticCategory=TEAM_PASSING&conference=ALL&role=OPP&season=2018&seasonType=REG&d-447263-s=PASSING_NET_YARDS_GAME_AVG&d-447263-o=1&d-447263-n=1",
+                "http://www.nfl.com/stats/categorystats?tabSeq=2&defensiveStatisticCategory=RUSHING&conference=ALL&role=OPP&season=2018&seasonType=REG&d-447263-s=RUSHING_YARDS_PER_GAME_AVG&d-447263-o=1&d-447263-n=1",
+        };
+
+        new getDefense().execute(Defense_URL[0],Defense_URL[1],Defense_URL[2]);
+
+        this.context = context;
+    }
+
+    /**
+     * Creates or returns the instance for the singleton object.
+     * @return
+     */
     public static DataSingleton getInstance(){
         if(instance == null){
             instance = new DataSingleton();
@@ -52,7 +86,27 @@ public class DataSingleton {
 
     }
 
-    public List<String> getOffenseStats(String mTeam){
+    /**
+     * Creates or returns the instance for the singleton object when contex is also given.
+     * @param context current activity contex
+     * @return
+     */
+    public static DataSingleton getInstance(Context context){
+        if(instance == null){
+            instance = new DataSingleton(context);
+        }
+
+        return instance;
+
+    }
+
+
+    /**
+     * Returns a list of Offensive stats data given a team name
+     * @param team Defensive stats of the team you want
+     * @return stats list
+     */
+    public List<String> getOffenseStats(String team){
         List<String> stats = new ArrayList<>();
 
         Scanner S = null;
@@ -60,11 +114,11 @@ public class DataSingleton {
         for (int i = 0; i < 33; i++) {
             String ElementString = TotalOffenseElement.get(i).text();
 
-            if(ElementString.contains(mTeam)) {
+            if(ElementString.contains(team)) {
                 S = new Scanner(ElementString);
                 Ranked = S.next();
 
-                while(!S.hasNext(mTeam))
+                while(!S.hasNext(team))
                     S.next();
 
                 break;
@@ -85,11 +139,11 @@ public class DataSingleton {
         for (int i = 0; i < 33; i++) {
             String ElementString = PassingOffenseElement.get(i).text();
 
-            if(ElementString.contains(mTeam)) {
+            if(ElementString.contains(team)) {
                 S = new Scanner(ElementString);
                 Ranked = S.next();
 
-                while(!S.hasNext(mTeam))
+                while(!S.hasNext(team))
                     S.next();
 
                 break;
@@ -110,11 +164,11 @@ public class DataSingleton {
         for (int i = 0; i < 33; i++) {
             String ElementString = RushingOffenseElement.get(i).text();
 
-            if(ElementString.contains(mTeam)) {
+            if(ElementString.contains(team)) {
                 S = new Scanner(ElementString);
                 Ranked = S.next();
 
-                while(!S.hasNext(mTeam))
+                while(!S.hasNext(team))
                     S.next();
 
                 break;
@@ -130,7 +184,12 @@ public class DataSingleton {
         return stats;
     }
 
-    public List<String> getDefenseStats(String mTeam){
+    /**
+     * Returns a list of defensive stats data given a team name
+     * @param team Defensive stats of the team you want
+     * @return stats list
+     */
+    public List<String> getDefenseStats(String team){
         List<String> stats = new ArrayList<>();
 
         Scanner S = null;
@@ -138,11 +197,11 @@ public class DataSingleton {
         for (int i = 0; i < 33; i++) {
             String ElementString = TotalDefenseElement.get(i).text();
 
-            if(ElementString.contains(mTeam)) {
+            if(ElementString.contains(team)) {
                 S = new Scanner(ElementString);
                 Ranked = S.next();
 
-                while(!S.hasNext(mTeam))
+                while(!S.hasNext(team))
                     S.next();
 
                 break;
@@ -163,11 +222,11 @@ public class DataSingleton {
         for (int i = 0; i < 33; i++) {
             String ElementString = PassingDefenseElement.get(i).text();
 
-            if(ElementString.contains(mTeam)) {
+            if(ElementString.contains(team)) {
                 S = new Scanner(ElementString);
                 Ranked = S.next();
 
-                while(!S.hasNext(mTeam))
+                while(!S.hasNext(team))
                     S.next();
 
                 break;
@@ -189,11 +248,11 @@ public class DataSingleton {
         for (int i = 0; i < 33; i++) {
             String ElementString = RushingDefenseElement.get(i).text();
 
-            if(ElementString.contains(mTeam)) {
+            if(ElementString.contains(team)) {
                 S = new Scanner(ElementString);
                 Ranked = S.next();
 
-                while(!S.hasNext(mTeam))
+                while(!S.hasNext(team))
                     S.next();
 
                 break;
@@ -210,6 +269,11 @@ public class DataSingleton {
     }
 
 
+    /**
+     * Helper function that takes a number string and returns the ordinal value of it (22 -> 22nd).
+     * @param input string of number
+     * @return string of ordinal number
+     */
     public  String ordinal(String input) {
         int i = Integer.parseInt(input);
         String[] sufixes = new String[] { "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th" };
@@ -224,7 +288,7 @@ public class DataSingleton {
     }
 
     /**
-     * AsyncTask to get the teams Offense stats and display it on offense_textview.
+     * AsyncTask to get the teams Offense stats and save it to the Singleton Field.
      */
     public class getOffense extends AsyncTask<String,Void,Void> {
         private Scanner S = null;
@@ -286,7 +350,7 @@ public class DataSingleton {
     }
 
     /**
-     * AsyncTask to get the teams Defense stats and display it on defense_textview.
+     * AsyncTask to get the teams Defense stats and save it to the Singleton Field.
      */
     public class getDefense extends AsyncTask<String, Void, Void> {
         private List<String> stats = null;
@@ -330,6 +394,10 @@ public class DataSingleton {
             TotalDefenseElement = totalElem;
             RushingDefenseElement = rushingElem;
             PassingDefenseElement = passingElem;
+
+//            if(context != null)
+//                Toast.makeText(context,"Stats is loaded",Toast.LENGTH_SHORT).show();
+
         }
     }
 

@@ -1,45 +1,70 @@
 package io.github.toshalghimire.depthchartv2.Models;
 
-import android.util.Log;
+import android.support.annotation.NonNull;
 
-public class NewsModel {
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.SimpleFormatter;
+
+/**
+ * Model class to store the data for the news articles.
+ */
+public class NewsModel implements Comparable<NewsModel> {
+
     private String title;
-    private String shortDescription;
-    private String longDescription;
-    private String teamName;
-    private int teamLogo;
-    private int PlayerImage;
-    private int teamBackgroundColor;
+    private String Description;
+    private String link;
+    private Date published;
+
+    /**
+     * Constructor for the news articles.
+     * @param title Title of article
+     * @param description Description of article
+     * @param date published date
+     * @param link link to full article
+     */
+    public NewsModel(String title, String description, String date, String link)  {
+        this.title = title;
+        this.Description = description;
+        this.link = link;
+
+        // Formating date
+        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm a");
+        try {
+            this.published = dateFormat.parse(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @Override
     public String toString() {
         return "NewsModel{" +
                 "title='" + title + '\'' +
-                ", shortDescription='" + shortDescription + '\'' +
-                ", teamName='" + teamName + '\'' +
+                ", Description='" + Description + '\'' +
+                ", link='" + link + '\'' +
+                ", published=" + getDate() +
                 '}';
     }
 
-    public String getLongDescription() {
-        return longDescription;
+    public Date getPublished() {
+        return published;
     }
 
-    public void setLongDescription(String longDescription) {
-        this.longDescription = longDescription;
+    public void setPublished(Date published) {
+        this.published = published;
     }
 
-    public NewsModel(String title, String shortDescription, String longDescription, String teamName) {
-        this.title = title;
-        this.shortDescription = shortDescription;
-        this.longDescription = longDescription;
-        this.teamName = TeamModel.CodeToName(teamName);
-        this.teamLogo = TeamModel.getLogoRes(teamName);
-
-        //PlayerImage = playerImage;
-        this.teamBackgroundColor = TeamModel.getColorRes(teamName);
-        Log.d("news", "NewsModel: Created: " + title);
+    public String getLink() {
+        return link;
     }
 
+    public void setLink(String link) {
+        this.link = link;
+    }
 
     public String getTitle() {
         return title;
@@ -49,48 +74,21 @@ public class NewsModel {
         this.title = title;
     }
 
-    public String getShortDescription() {
-        return shortDescription;
+    public String getDescription() {
+        return Description;
     }
 
-    public void setShortDescription(String shortDescription) {
-        this.shortDescription = shortDescription;
+    public void setDescription(String description) {
+        Description = description;
     }
 
-    public String getTeamName() {
-        return teamName;
+    public String getDate() {
+        DateFormat df = new SimpleDateFormat("MMMM dd, hh:mm a");
+        return df.format(published);
     }
 
-    public void setTeamName(String teamName) {
-        this.teamName = teamName;
+    @Override
+    public int compareTo(@NonNull NewsModel o) {
+        return getPublished().compareTo(o.getPublished());
     }
-
-    public int getTeamLogo() {
-        return teamLogo;
-    }
-
-    public void setTeamLogo(int teamLogo) {
-        this.teamLogo = teamLogo;
-    }
-
-    public int getPlayerImage() {
-        return PlayerImage;
-    }
-
-    public void setPlayerImage(int playerImage) {
-        PlayerImage = playerImage;
-    }
-
-    public int getTeamBackgroundColor() {
-        return teamBackgroundColor;
-    }
-
-    public void setTeamBackgroundColor(int teamBackgroundColor) {
-        this.teamBackgroundColor = teamBackgroundColor;
-    }
-
-
-
-
-
 }

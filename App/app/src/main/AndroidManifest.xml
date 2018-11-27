@@ -12,23 +12,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.HomeActivity"
+
+        <activity
+            android:name=".Activity.HomeActivity"
             android:label="NFL Teams">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.TeamPage" />
+        <activity android:name=".Activity.testActivity" />
         <activity
-            android:name=".Activity.teamPage_V02Activity"
+            android:name=".Activity.TeamPageActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
         <activity
-            android:name=".Activity.News"
-            android:theme="@style/News"
-            android:label="Latest injuries and updates"></activity>
+            android:name=".Activity.InjuryActivity"
+            android:label="Latest injuries and updates"
+            android:theme="@style/News" />
     </application>
 
 </manifest>

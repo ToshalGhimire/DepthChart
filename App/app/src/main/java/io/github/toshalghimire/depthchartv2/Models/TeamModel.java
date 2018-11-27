@@ -1,7 +1,13 @@
 package io.github.toshalghimire.depthchartv2.Models;
 
+import android.util.Log;
+
 import io.github.toshalghimire.depthchartv2.R;
 
+
+/**
+ * Team model class for the Team list view. This class has some useful static methods that can be used in other classes.
+ */
 public class TeamModel {
     private String teamCode;
     private String teamCity;
@@ -12,8 +18,14 @@ public class TeamModel {
     private int logo;
 
 
-
-
+    /**
+     * Constructor for the team model
+     * @param teamCode Team code (IE DEN)
+     * @param teamCity Team city
+     * @param teamName Team name
+     * @param mWebsite Teams website
+     * @param teamBackgroundColor Background color of team
+     */
     public TeamModel(String teamCode, String teamCity, String teamName, String mWebsite, String teamBackgroundColor) {
         this.teamCode = teamCode;
         this.teamCity = teamCity;
@@ -152,7 +164,9 @@ public class TeamModel {
     }
     public static int getColorRes(String teamName){
 
-        if(teamName.equals("FA"))
+        Log.d("COLOR RES", "getColorRes: " + teamName);
+
+        if(teamName == null || teamName.equals("FA"))
             return R.color.color_Raiders;
 
         if(teamName.equals("49ers")){
@@ -358,6 +372,8 @@ public class TeamModel {
     }
 
     public static String  CodeToName(String teamName){
+
+        if(teamName.equals("ARZ")) {return "Cardinals";}
         if(teamName.equals("ARI")) {return "Cardinals";}
         if(teamName.equals("ATL")) {return "Falcons";}
         if(teamName.equals("BAL")) {return "Ravens";}
