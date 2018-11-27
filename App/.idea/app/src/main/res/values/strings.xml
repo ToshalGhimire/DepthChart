@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">NFL Teams</string>
+    <string name="DEN">The Broncos</string>
+    <string name="PIT">The Steelers</string>
+    <string name="title_activity_test">test</string>
+    <string name="title_team">Team</string>
+    <string name="title_injury">Injuries</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

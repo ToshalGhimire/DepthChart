@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "172348556867",
+    "firebase_url": "https://nfl-teams.firebaseio.com",
+    "project_id": "nfl-teams",
+    "storage_bucket": "nfl-teams.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172348556867:android:ce321c365e27e77e",
+        "android_client_info": {
+          "package_name": "io.github.toshalghimire.depthchartv2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "172348556867-dcj6a1u235hq4fqhfk9mvt5k4m4nsa5p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.github.toshalghimire.depthchartv2",
+            "certificate_hash": "add2b2bf8cb1e397228498ab195b0efa89d46958"
+          }
+        },
+        {
+          "client_id": "172348556867-kdr3eu5cuhu5os0mvcrpu3qbvnb7l3uo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRcq36E51XKL371Ug0JoX7V2wmrRkrKdk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "172348556867-kdr3eu5cuhu5os0mvcrpu3qbvnb7l3uo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

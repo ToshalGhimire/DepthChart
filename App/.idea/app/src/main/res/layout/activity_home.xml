@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".Activity.HomeActivity"
+    >
+
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/home_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark"
+            app:layout_scrollFlags="enterAlways|snap"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            />
+
+
+        <android.support.design.widget.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tablayout"
+            android:background="@color/colorWhite"
+            app:tabTextColor="@color/colorGray"
+            app:tabSelectedTextColor="@color/colorTabSelected"
+
+            android:minHeight="?attr/actionBarSize">
+
+        </android.support.design.widget.TabLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- Your fragment -->
+
+        <TextView
+            android:id="@+id/notFound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team Not Found"
+            android:visibility="gone"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            />
+
+
+
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/viewPager">
+
+        </android.support.v4.view.ViewPager>
+    </FrameLayout>
+
+
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>
