@@ -1,19 +1,22 @@
-# Depth Chart : for fantasy players
 
-Creator: Toshal Ghimire
+# NFL Teams App
 
-Title: Depth Chart
+This app is Purely a school project and is a personal app used only for fantasy football research. It is part of my  Object Oiented analysis and design Final Project
 
-Description: An android app that scrapes the web in order to retrieve up to date depth chart from NFL teams.  Intended to be used by fans who also play fantasy football. It will display only the positions that are used in fantasy football and also the teams defensive stats. 
- 
+Developer: Toshal Ghimire
 
-Actors: Fantasy Football Players
+### Designed to be used by fantasy football players
 
-Functionality:
+NFL Teams app is android app that allowes its users to research team stats, get live depth chart, league news and injuries updates.
+
+Please Check our the [Video Demo](https://www.youtube.com/watch?v=J3jaws8nDek&t=1s)
+
   
-1. User sees a list view of all NFL teams
-   * Can Search for a specific team
-   * Browse and select a team  
-2. Once team is selected users:
-   * Lists all positions and the starters related with  a non-ppr fantasy football league
-   * User will also see defensive stats 
+## Use Cases
+| ID | Name | Description |
+| ------ | ------ | ------ |
+| U-01 | Browse teams| A user can scroll through all 32 NFL teams.|
+| U-02 | Search teams| A user can search for a specific NFL team .
+| U-03 | View team |A user can view an NFL teams stats and depth charts.|
+| U-04 | View News| A user can view the 10 latest news articles from the nfl|
+| U-05 | View Injuries | A user can view the 10 latest injuries of players around the league|
