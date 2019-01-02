@@ -1,5 +1,5 @@
 
-# NFL Teams App
+# NFL Teams 
 
 This app is Purely a school project and is a personal app used only for fantasy football research. It is part of my  Object Oiented analysis and design Final Project
 
@@ -7,7 +7,7 @@ Developer: Toshal Ghimire
 
 ### Designed to be used by fantasy football players
 
-NFL Teams app is android app that allowes its users to research team stats, get live depth chart, league news and injuries updates.
+NFL Teams is android app that allowes its users to research team stats, get live depth chart, league news and injuries updates.
 
 Please Check our the [Video Demo](https://www.youtube.com/watch?v=J3jaws8nDek&t=1s)
 
