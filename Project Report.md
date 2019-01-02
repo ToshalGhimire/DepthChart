@@ -5,8 +5,8 @@
  ​​An android app designed to used by fantasy football players in order to
     research team stats, get live depth chart, league news and injuries updates.
     
- [DEMO]( ​https://www.youtube.com/watch?v=J3jaws8nDek&feature=youtu.be)
-
+ [DEMO](https://www.youtube.com/watch?v=J3jaws8nDek&feature=youtu.be)
+[Video Demo](https://www.youtube.com/watch?v=J3jaws8nDek&feature=youtu.be)
 All features that I originally planned on implementing were implemented. With some additional features as well
 
 #### Implemented Features
