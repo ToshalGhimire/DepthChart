@@ -9,7 +9,7 @@ Developer: Toshal Ghimire
 
 NFL Teams is android app that allowes its users to research team stats, get live depth chart, league news and injuries updates.
 
-Please Check our the [Video Demo](https://www.youtube.com/watch?v=J3jaws8nDek&t=1s)
+Please check out the [Video Demo](https://www.youtube.com/watch?v=J3jaws8nDek&t=1s)
 
   
 ## Use Cases
